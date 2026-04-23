@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+# 派生 Template ではこの quality job の steps を実際のチェックで上書きしてください。
+# job 名 'quality' は Branch Protection の required_status_checks と連動するため変更しないでください。
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Placeholder check
+        run: |
+          echo "No language-specific checks defined in base template."
+          echo "Override this job in derivative templates."

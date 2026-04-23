@@ -1,0 +1,42 @@
+name: Claude タスク
+description: Claude Code に実装を依頼する Issue テンプレート
+title: "[Task] "
+labels: ["claude-task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Claude Code に自律実装を依頼する Issue です。本文に `@claude` が含まれると Claude Code Action が起動します。
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 背景・目的
+      description: 何のために、どのロジックの検証のために、このタスクを依頼するか。
+    validations:
+      required: true
+
+  - type: textarea
+    id: task
+    attributes:
+      label: 依頼内容
+      description: Claude に実装してほしい具体的な内容。対象ファイル、関数シグネチャ、挙動等。
+      placeholder: |
+        @claude 以下を実装してください。
+        - 対象: (ファイルパス)
+        - シグネチャ: (関数の型)
+        - 挙動: (期待する動作)
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 完了条件
+      description: テストや挙動の具体的な基準。
+      placeholder: |
+        - 該当のテストが green
+        - CI の quality job が green
+        - PR 作成後に gh pr merge --auto --squash --delete-branch が実行されている
+    validations:
+      required: true
