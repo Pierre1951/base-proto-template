@@ -8,7 +8,7 @@
       "version": "20"
     }
   },
-  "postCreateCommand": "npm install -g @anthropic-ai/claude-code && echo 'alias claude=\"claude --dangerously-skip-permissions\"' >> ~/.bashrc",
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code && echo 'alias claude=\"claude --dangerously-skip-permissions\"' >> ~/.bashrc && ( [ -f ~/.claude.json ] || printf '%s' '{\"hasCompletedOnboarding\":true}' > ~/.claude.json )",
   "customizations": {
     "vscode": {
       "extensions": []
