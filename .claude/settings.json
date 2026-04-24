@@ -47,13 +47,7 @@
       "denyRead": ["~/.ssh", "~/.gnupg", "~/.aws"]
     },
     "network": {
-      "allowedDomains": [
-        "github.com",
-        "*.github.com",
-        "api.github.com",
-        "objects.githubusercontent.com",
-        "api.anthropic.com"
-      ],
+      "allowedDomains": ["*"],
       "allowLocalBinding": true
     }
   }
