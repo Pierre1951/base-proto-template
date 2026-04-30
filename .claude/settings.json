@@ -36,19 +36,5 @@
       "Read(~/.aws/**)",
       "Read(~/.gnupg/**)"
     ]
-  },
-  "sandbox": {
-    "enabled": true,
-    "autoAllowBashIfSandboxed": true,
-    "enableWeakerNestedSandbox": true,
-    "excludedCommands": ["docker *"],
-    "filesystem": {
-      "allowWrite": ["./", "/tmp/build"],
-      "denyRead": ["~/.ssh", "~/.gnupg", "~/.aws"]
-    },
-    "network": {
-      "allowedDomains": ["*"],
-      "allowLocalBinding": true
-    }
   }
 }
