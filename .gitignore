@@ -9,3 +9,8 @@ Thumbs.db
 .env.*
 !.env.example
 *.log
+
+# ralph-loop 個人作業ファイル (state.md / fix_plan.md は commit する)
+.ralph/iter-*.json
+.ralph/*.local.md
+.claude/ralph-loop.local.md
