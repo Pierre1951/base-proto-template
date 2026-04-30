@@ -1,5 +1,9 @@
 # プロジェクト指針
 
+<!-- INIT_DEVENV_SPEC_REF_START -->
+<!-- このマーカー間を init-devenv が SPEC.md 参照ブロックで上書きします。手動編集不要。 -->
+<!-- INIT_DEVENV_SPEC_REF_END -->
+
 > **※ 派生 Template 作成時の書き換え**
 >
 > このファイルは言語非依存の汎用骨格です。派生 Template を作る時、以下 2 箇所に言語固有の内容を追記してください。

@@ -1,22 +1,19 @@
 {
   "name": "Base Prototype",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "20"
-    }
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}",
+    "CLAUDE_CODE_OAUTH_TOKEN": "${localEnv:CLAUDE_CODE_OAUTH_TOKEN}",
+    "IS_SANDBOX": "1"
   },
-  "postCreateCommand": "npm install -g @anthropic-ai/claude-code && echo 'alias claude=\"claude --dangerously-skip-permissions\"' >> ~/.bashrc && ( [ -f ~/.claude.json ] || printf '%s' '{\"hasCompletedOnboarding\":true}' > ~/.claude.json )",
   "customizations": {
     "vscode": {
       "extensions": []
     }
   },
-  "secrets": {
-    "CLAUDE_CODE_OAUTH_TOKEN": {
-      "description": "Claude Max OAuth token (generated locally via `claude setup-token`)"
-    }
-  }
+  "postCreateCommand": "[ -f ~/.claude.json ] || printf '%s' '{\"hasCompletedOnboarding\":true}' > ~/.claude.json"
 }
